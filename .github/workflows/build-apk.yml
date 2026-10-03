@@ -1,0 +1,49 @@
+name: Build LifeLog Offline APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Create Android project
+        run: |
+          mkdir -p /tmp/lifelog
+          cd /tmp/lifelog
+          flutter create --platforms=android --org com.yasin --project-name lifelog lifelog
+          cp -R "$GITHUB_WORKSPACE/lib" lifelog/
+          cp "$GITHUB_WORKSPACE/pubspec.yaml" lifelog/
+
+      - name: Install dependencies
+        run: |
+          cd /tmp/lifelog/lifelog
+          flutter pub get
+
+      - name: Build APK
+        run: |
+          cd /tmp/lifelog/lifelog
+          flutter build apk --release
+          cp build/app/outputs/flutter-apk/app-release.apk "$GITHUB_WORKSPACE/LifeLog-Offline.apk"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: LifeLog-Offline-APK
+          path: LifeLog-Offline.apk
