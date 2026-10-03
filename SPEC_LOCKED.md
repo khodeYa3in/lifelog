@@ -1,0 +1,16 @@
+# LifeLog Android locked baseline
+- Android only
+- Flutter + native Kotlin where Android APIs require it
+- com.yasin.lifelog
+- Glass dark-first UI
+- Persian/English target, Jalali/Gregorian target
+- local-first/offline
+- Tasks/timeline, categories/tags, recurrence/subtasks target
+- Focus
+- Daily Review 0–100
+- Journal
+- Sleep
+- Habits/goals/streak/heatmap target
+- Analytics ranges target
+- alarms/notifications/widgets/biometrics target
+- encrypted server sync; server must not receive plaintext sensitive records

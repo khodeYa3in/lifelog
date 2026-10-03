@@ -1,0 +1,18 @@
+LifeLog — ساخت APK بدون Android Studio
+
+1) این ZIP را Extract کن.
+2) در GitHub یک Repository جدید بساز.
+3) تمام محتویات Extract شده را داخل Repository آپلود کن؛ پوشه .github هم باید آپلود شود.
+4) وارد تب Actions شو.
+5) Workflow با نام Build LifeLog APK را باز کن.
+6) Run workflow را بزن.
+7) بعد از پایان Build، پایین صفحه Artifacts گزینه LifeLog-Android-APK را دانلود کن.
+8) داخل Artifact فایل LifeLog.apk قرار دارد.
+
+Package target:
+com.yasin.lifelog
+
+نکته:
+این Workflow خودش Flutter و Java را روی GitHub Runner آماده می‌کند و Android project را می‌سازد؛ Android Studio لازم نیست.
+
+این Build بر اساس سورس فعلی LifeLog است. قابلیت‌های Native نهایی مثل Exact Alarm، Widget، Android Keystore و Sync رمزگذاری‌شده production هنوز باید قبل از انتشار نهایی کامل و روی دستگاه تست شوند.

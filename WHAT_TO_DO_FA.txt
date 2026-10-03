@@ -1,0 +1,20 @@
+کاری که باید انجام بدهی
+
+هاست:
+هیچ چیزی لازم نیست آپلود کنی. نسخه Android آفلاین به هاست وصل نمی‌شود.
+
+ساخت APK بدون Android Studio:
+1. وارد github.com شو.
+2. New repository بزن و یک مخزن Private با نام LifeLog بساز.
+3. این ZIP را Extract کن.
+4. همه فایل‌ها و پوشه‌های داخل آن، مخصوصاً .github، را داخل Repository آپلود کن.
+5. Commit changes بزن.
+6. تب Actions را باز کن.
+7. Build LifeLog Offline APK را انتخاب کن.
+8. Run workflow را بزن.
+9. بعد از سبز شدن Build، پایین همان صفحه Artifacts را باز کن.
+10. LifeLog-Offline-APK را دانلود کن.
+11. داخل فایل دانلودی LifeLog-Offline.apk است؛ آن را روی گوشی نصب کن.
+
+نکته امنیتی:
+این بسته، Build خودکار نسخه آفلاین فعلی است. قبل از استفاده برای ژورنال/اطلاعات واقعاً حساس، لایه دیتابیس رمزگذاری‌شده، Keystore، PIN/biometric و backup رمزگذاری‌شده باید کامل و روی دستگاه تست شوند.
